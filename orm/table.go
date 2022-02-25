@@ -99,7 +99,7 @@ func newTable(typ reflect.Type) *Table {
 	t.TypeName = internal.ToExported(t.Type.Name())
 	t.ModelName = internal.Underscore(t.Type.Name())
 	tableName := tableNameInflector(t.ModelName)
-	t.setName(quoteIdent(tableName))
+	t.SetName(quoteIdent(tableName))
 	t.Alias = quoteIdent(t.ModelName)
 
 	typ = reflect.PtrTo(t.Type)
@@ -145,7 +145,7 @@ func (t *Table) init2() {
 	t.skippedFields = nil
 }
 
-func (t *Table) setName(name types.Safe) {
+func (t *Table) SetName(name types.Safe) {
 	t.SQLName = name
 	t.SQLNameForSelects = name
 	if t.Alias == "" {
@@ -333,10 +333,10 @@ func (t *Table) newField(f reflect.StructField, index []int) *Field {
 		}
 
 		if pgTag.Name == "_" {
-			t.setName("")
+			t.SetName("")
 		} else if pgTag.Name != "" {
 			s, _ := tagparser.Unquote(pgTag.Name)
-			t.setName(types.Safe(quoteTableName(s)))
+			t.SetName(types.Safe(quoteTableName(s)))
 		}
 
 		if s, ok := pgTag.Options["select"]; ok {
