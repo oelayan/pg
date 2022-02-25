@@ -16,10 +16,10 @@ import (
 
 	"github.com/go-pg/zerochecker"
 
-	"github.com/go-pg/pg/v10/internal"
-	"github.com/go-pg/pg/v10/internal/pool"
-	"github.com/go-pg/pg/v10/pgjson"
-	"github.com/go-pg/pg/v10/types"
+	"github.com/oelayan/pg/v10/internal"
+	"github.com/oelayan/pg/v10/internal/pool"
+	"github.com/oelayan/pg/v10/pgjson"
+	"github.com/oelayan/pg/v10/types"
 )
 
 const (

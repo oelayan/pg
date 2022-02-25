@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/go-pg/pg/v10/types"
+	"github.com/oelayan/pg/v10/types"
 )
 
 type SelectQuery struct {

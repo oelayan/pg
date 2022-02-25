@@ -20,7 +20,7 @@ tag:
 
 fmt:
 	gofmt -w -s ./
-	goimports -w  -local github.com/go-pg/pg ./
+	goimports -w  -local github.com/oelayan/pg ./
 
 go_mod_tidy:
 	go get -u && go mod tidy

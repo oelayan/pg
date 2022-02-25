@@ -31,9 +31,9 @@ but works with PostgreSQL, MySQL, and SQLite.
   you need to update your imports:
 
 ```
-github.com/go-pg/pg/extra/pgdebug -> github.com/go-pg/pg/extra/pgdebug/v10
-github.com/go-pg/pg/extra/pgotel -> github.com/go-pg/pg/extra/pgotel/v10
-github.com/go-pg/pg/extra/pgsegment -> github.com/go-pg/pg/extra/pgsegment/v10
+github.com/oelayan/pg/extra/pgdebug -> github.com/oelayan/pg/extra/pgdebug/v10
+github.com/oelayan/pg/extra/pgotel -> github.com/oelayan/pg/extra/pgotel/v10
+github.com/oelayan/pg/extra/pgsegment -> github.com/oelayan/pg/extra/pgsegment/v10
 ```
 
 - Exported `pg.Query` which should be used instead of `orm.Query`.
@@ -58,10 +58,10 @@ err := db.Model((*User)(nil)).Limit(10).Select(&mm)
 ```
 
 - Columns that start with `_` are ignored if there is no destination field.
-- Optional [faster json encoding](https://github.com/go-pg/pgext).
-- Added [pgext.OpenTelemetryHook](https://github.com/go-pg/pgext) that adds
+- Optional [faster json encoding](https://github.com/oelayan/pgext).
+- Added [pgext.OpenTelemetryHook](https://github.com/oelayan/pgext) that adds
   [OpenTelemetry instrumentation](https://pg.uptrace.dev/tracing/).
-- Added [pgext.DebugHook](https://github.com/go-pg/pgext) that logs failed queries.
+- Added [pgext.DebugHook](https://github.com/oelayan/pgext) that logs failed queries.
 - Added `db.Ping` to check if database is healthy.
 
 ### Changes
@@ -102,7 +102,7 @@ err := db.Model((*User)(nil)).Limit(10).Select(&mm)
   when context is cancelled.
 - `Query.Column` does not accept relation name any more. Use `Query.Relation` instead which returns
   an error if relation does not exist.
-- urlvalues package is removed in favor of https://github.com/go-pg/urlstruct. You can also use
+- urlvalues package is removed in favor of https://github.com/oelayan/urlstruct. You can also use
   struct based filters via `Query.WhereStruct`.
 - `NewModel` and `AddModel` methods of `HooklessModel` interface were renamed to `NextColumnScanner`
   and `AddColumnScanner` respectively.
